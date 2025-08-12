@@ -1,64 +1,59 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head> 
-    <meta charset="UTF-8">
-    <meta name="viewpoint" content="widh=device-widh, initial-scale=1.0">
-    <title>Lista de Tarefas Pessoal</title>
-
-    <link rel="stylesheet" href="style.css">
-
-    <link rel="manifest" href="manifest.json">
-
-    <link rel="apple-touch-icon" href="icon-96.png">
-
-    <link rel="icon" href="icon-48.png" type="image/png">
-
-    <meta name="theme-color" content="#336706"/>
-    
-</head>
-</body>
-
-
-    <div class="container">
-         <header>
-             <n1> Lista de Tarefas</n1>
-             <div class="input-area">
-                <input type="text" id="task-input" placeholder="Adicionar nova tarefa...">
-                <button id="add-task-btn">Adicionar</button>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lista de Tarefas Pessoal</title>
+ 
+        <link rel="stylesheet" href="style.css">
+ 
+        <link rel="manifest" href="manifest.json">
+ 
+        <link rel="apple-touch-icon" href="icon-96.png">
+ 
+        <link rel="icon" href="icon-48.png" type="image/png">
+ 
+        <meta name="theme-color" content="#3367D6"/>
+ 
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1>Lista de Tarefas</h1>
+                <div class="input-area">
+                    <input type="text" id="task-input" placeholder="Adicionar nova tarefa...">
+                    <button id="add-task-btn">Adicionar</button>
                 </div>
-         </header>
-         
-         
-         <main>
-            <ul id="task-list">
-            </ul>
+            </header>
+            <main>
+                <ul id="task-list">
+ 
+                </ul>
             </main>
-    </div>
-
+        </div>
         <footer class="app-footer">
             <p>❤APP CRIADO NO CURSO SENAI❤</p>
-            </footer>
-
-            <!---Script para arquivo JavaScript (sempre no final do body)-->
-            <script src="script.js"></script>
-
-            <!--Script para registrar o Service Worker-->
-            <script>
-                if ("serviceworker" in navigator) {
-                    window.addEventListener("load", function () {
-                        navigator.serviceWorker.register("/sw.js").then(
-                            function (registration){
-                                console.leg("ServiceWorker registrado com sucesso no escopo: ", registration.scope);
-                            },
-                            function (err){
-                                console.log("ServiceWorker falhou no registro: ", err);
-                            });
-                            });
-                  
-                    }
-            </script>
-            </body>
-            </html>
-
-
+        </footer>
+ 
+ 
+        <script src="script.js"></script>
+ 
+        <script>
+            if ("serviceWorker" in navegador){
+                window.addEventListener("load", function () {
+                    navigator.serviceWorker.register("/sw.js").then(
+                        function (registration) {
+                            console.log("ServiceWorker registrado com sucesso no escopo: ", registration.scope);
+ 
+                        },
+                        function (err){
+                            console.log("ServiceWorker falhou no registro: ", err);
+                        }
+                    );
+                });
+            }
+        </script>
+    </body>
+</html>
+ 
      
